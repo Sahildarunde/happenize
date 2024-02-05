@@ -11,6 +11,7 @@ const poppins = Poppins({
 })
 
 
+
 export const metadata: Metadata = {
   title: 'Happenize',
   description: 'Happenize is a platform for event management.',
@@ -22,14 +23,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
     <ClerkProvider>
       <html lang="en">
         <body className={poppins.variable}>{children}</body>
       </html>
     </ClerkProvider>
-  );
+  )
 }
