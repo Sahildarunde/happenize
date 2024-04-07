@@ -61,12 +61,14 @@ export async function POST(req: Request) {
       clerkId: id,
       email: email_addresses[0].email_address,
       username: username!,
-      firstName: first_name!,
-      lastName: last_name!,
+      firstName: first_name,
+      lastName: last_name,
       photo: image_url,
     }
-
+    
+    console.log(user);
     const newUser = await createUser(user);
+    console.log(newUser);
 
     if(newUser) {
       await clerkClient.users.updateUserMetadata(id, {
